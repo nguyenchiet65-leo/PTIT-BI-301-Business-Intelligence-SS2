@@ -1,0 +1,42 @@
+### Giải thích cấu trúc 3 cấp:
+1. **Cấp 1 - Doanh thu (Lagging Metric):** Chỉ số đo lường kết quả tài chính cao nhất của doanh nghiệp.
+2. **Cấp 2 - User Active và ARPU (Key Drivers):** Doanh thu được cấu thành trực tiếp bởi công thức toán học: Doanh thu = User Active/ ARPU. Để tác động đến doanh thu, doanh nghiệp phải điều chỉnh quy mô người dùng hoặc doanh thu trung bình trên mỗi người dùng.
+3. **Cấp 3 - Phân rã User Active:** Quy mô người dùng hoạt động cuối kỳ phụ thuộc vào biến động dòng vào và dòng ra: User Active = User Đầu kỳ + User Mới - User Hủy. Trong đó, nhánh **User Hủy (Churn Users)** đóng vai trò là "lỗ hổng dòng tiền". Nhánh này tiếp tục được phân rã thành các nguyên nhân gốc rễ như trải nghiệm nội dung, lỗi hạ tầng app và thanh toán.
+
+---
+
+## 3. Nhiệm vụ 2: Phân tích Chuỗi Nhân Quả (Cause & Effect Logic)
+
+Biến động chỉ số từ tháng 7 sang tháng 8 không diễn ra ngẫu nhiên mà tuân theo một chuỗi phản ứng dây chuyền từ hành vi vi mô đến kết quả tài chính vĩ mô:
+
+Giờ xem TB (Leading) -> CSAT (Perceived Value) -> Tác động -> Churn Rate (Lagging) -> Tác động -> Doanh thu
+
+### Mắt xích 1: Giờ xem trung bình --> Điểm hài lòng CSAT
+- **Cơ chế tác động:** Thời lượng xem phim phản ánh mức độ tương tác (Engagement) và giá trị thực tế mà khách hàng nhận được từ nền tảng.
+- **Bằng chứng dữ liệu:** Khi Giờ xem TB giảm từ 120 giờ xuống 110 giờ (-8.33%), người dùng không tìm thấy nội dung hấp dẫn hoặc gặp rào cản trong việc lướt tìm phim. Sự hụt hẫng về trải nghiệm này trực tiếp kéo giảm chỉ số CSAT từ 4.2 xuống 3.8 (-9.52%).
+
+### Mắt xích 2: Điểm hài lòng CSAT --> Tỷ lệ rời bỏ (Churn Rate)
+- **Cơ chế tác động:** CSAT đóng vai trò là chỉ số đo lường giá trị nhận thức (Perceived Value). Khi CSAT suy giảm vượt ngưỡng an toàn (< 4.0), tâm lý hoài nghi về chi phí duy trì subscription xuất hiện, thúc đẩy quyết định hủy gói.
+- **Bằng chứng dữ liệu:** Sự sụt giảm CSAT làm Churn Rate bùng nổ từ 4.00% lên 5.05% (+1.05% tuyệt đối, tương ứng tăng 26.26% về mặt tỷ lệ). Số lượng khách hàng hủy gói tăng thêm 50,000 người (từ 200,000 lên 250,000 người).
+
+### Mắt xích 3: Churn Rate --> User Active & Tổng Doanh Thu
+- **Cơ chế tác động:** Việc gia tăng lượng User Hủy trực tiếp làm suy sụp tổng quy mô User Active nếu lượng User Mới không đủ bù đắp.
+- **Bằng chứng dữ liệu:** Lượng User Active sụt giảm 50,000 tài khoản (từ 5,000,000 xuống 4,950,000). Với ARPU của gói Basic giả định không đổi, sự suy giảm 1% quy mô người dùng trực tiếp làm bốc hơi 1% tổng doanh thu hàng tháng của thị trường Châu Á.
+
+---
+
+## 4. Danh mục Kiểm tra & Kế hoạch Hành động Kế tiếp
+
+### Checklist Xác minh Kỹ thuật
+- [x] KPI Tree tuân thủ cấu trúc 3 cấp và nguyên tắc toán học MECE.
+- [x] Số liệu Churn Rate T7 (4.00%) và T8 (5.05%) được tính toán chính xác.
+- [x] Đã giải thích rõ ràng mối quan hệ nhân quả từ chỉ số dẫn dắt (Leading) đến chỉ số kết quả (Lagging).
+
+### Kế hoạch Hành động Kế tiếp (Actionable Execution Schedule)
+1. **Ngày 01/10/2026:** Đội ngũ Product tối ưu hóa thuật toán Recommendation Engine nhằm giảm thời gian lướt tìm phim xuống dưới 1 phút.
+2. **Ngày 03/10/2026:** Bộ phận Content bổ sung danh mục phim bộ địa phương hóa cho thị trường Châu Á nhằm kích thích Giờ xem TB phục hồi lên >115 giờ.
+3. **Ngày 10/10/2026:** Rà soát lại chỉ số Churn Rate mục tiêu Tháng 9 hướng tới mốc <= 3.8%.
+"""
+
+words = len(text.split())
+print("Word count:", words)
